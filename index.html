@@ -14,6 +14,9 @@
         }
 
         header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             background-color: #333;
             color: white;
             padding: 15px;
@@ -52,7 +55,6 @@
         .search-bar {
             display: flex;
             align-items: center;
-            margin-left: auto;
         }
 
         .search-bar input {
@@ -78,7 +80,15 @@
 <body>
 
     <header>
-        <h1>Your Digital Marketing Agency</h1>
+        <div class="logo">
+            <img src="your-logo.png" alt="Logo">
+            <h2>Your Agency Name</h2>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button type="submit">Search</button>
+        </div>
     </header>
 
     <nav>
@@ -87,16 +97,6 @@
         <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
     </nav>
-
-    <div class="logo">
-        <img src="your-logo.png" alt="Logo">
-        <h2>Your Agency Name</h2>
-    </div>
-
-    <div class="search-bar">
-        <input type="text" placeholder="Search...">
-        <button type="submit">Search</button>
-    </div>
 
     <!-- Rest of your webpage content goes here -->
 

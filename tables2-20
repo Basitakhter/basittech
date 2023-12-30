@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiplication Tables</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+      background-color: #f2f2f2; /* Light gray background */
+    }
+
+    th {
+      background-color: #4CAF50; /* Green header background */
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<center><h2>Multiplication Tables</h2></center>
+
+<table>
+  <tr>
+    <th>2 Times Table</th>
+    <th>3 Times Table</th>
+    <th>4 Times Table</th>
+    <th>5 Times Table</th>
+  </tr>
+  <!-- Use JavaScript to generate rows dynamically -->
+</table>
+
+<table>
+  <tr>
+    <th>6 Times Table</th>
+    <th>7 Times Table</th>
+    <th>8 Times Table</th>
+    <th>9 Times Table</th>
+    <th>10 Times Table</th>
+  </tr>
+  <!-- Use JavaScript to generate rows dynamically -->
+</table>
+<table>
+  <tr>
+    <th>11 Times Table</th>
+    <th>12 Times Table</th>
+    <th>13 Times Table</th>
+    <th>14 Times Table</th>
+    <th>15 Times Table</th>
+  </tr>
+  <!-- Use JavaScript to generate rows dynamically -->
+</table>
+<table>
+  <tr>
+    <th>16 Times Table</th>
+    <th>17 Times Table</th>
+    <th>18 Times Table</th>
+    <th>19 Times Table</th>
+    <th>20 Times Table</th>
+  </tr>
+  <!-- Use JavaScript to generate rows dynamically -->
+</table>
+<script>
+  function generateTable(start, end, table) {
+    for (var i = 1; i <= 20; i++) {
+      var row = table.insertRow(i);
+      for (var j = start; j <= end; j++) {
+        var cell = row.insertCell(j - start);
+        cell.innerHTML = j + ' * ' + i + ' = ' + (j * i);
+      }
+    }
+  }
+
+  var table1 = document.querySelectorAll('table')[0];
+  generateTable(2, 5, table1);
+
+  var table2 = document.querySelectorAll('table')[1];
+  generateTable(6, 10, table2);
+
+  var table3 = document.querySelectorAll('table')[2];
+  generateTable(11, 15, table3);
+
+  var table4 = document.querySelectorAll('table')[3];
+  generateTable(16, 20, table4);
+
+</script>
+
+</body>
+</html>

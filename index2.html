@@ -1,10 +1,14 @@
-<!DOCTYPE html>
+</center><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Multiplication Tables</title>
   <style>
+        body {
+      background-color: #8ce0f5;
+    }
+
     table {
       border-collapse: collapse;
       width: 100%;
@@ -12,89 +16,177 @@
     }
 
     table, th, td {
-      border: 1px solid black;
+      border: 1px solid #be1212;
     }
 
     th, td {
-      padding: 10px;
+      padding: 8px;
       text-align: center;
-      background-color: #f2f2f2; /* Light gray background */
     }
 
-    th {
-      background-color: #4CAF50; /* Green header background */
-      color: white;
+    /* Add some color to odd rows */
+    table:nth-child(odd) {
+      background-color: #c8fc8d;
     }
+
+    /* Heading style with gradient background */
+    h2 {
+      text-align: center;
+      background: linear-gradient(to right, #95f356, #7116e7);
+      color: #bef393;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+      box-shadow: 0 4px 6px rgba(209, 212, 10, 0.1);
+    }
+    h3 {text-align: center;
+      background: linear-gradient(to right, #95f356, #7116e7);
+      color: #f8ff98;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+      box-shadow: 0 4px 6px rgba(209, 212, 10, 0.1);}
   </style>
 </head>
 <body>
+    <center><h2>Multiplication Tables 2 to 20</h2></center>
 
-<center><h2>Multiplication Tables</h2></center>
+  <table>
+    <tr>
+      <td>
+        <h3>2 Times Table</h3>
+        <table id="table2"></table>
+      </td>
 
-<table>
-  <tr>
-    <th>2 Times Table</th>
-    <th>3 Times Table</th>
-    <th>4 Times Table</th>
-    <th>5 Times Table</th>
-  </tr>
-  <!-- Use JavaScript to generate rows dynamically -->
-</table>
+      <td>
+        <h3>3 Times Table</h3>
+        <table id="table3"></table>
+      </td>
 
-<table>
-  <tr>
-    <th>6 Times Table</th>
-    <th>7 Times Table</th>
-    <th>8 Times Table</th>
-    <th>9 Times Table</th>
-    <th>10 Times Table</th>
-  </tr>
-  <!-- Use JavaScript to generate rows dynamically -->
-</table>
-<table>
-  <tr>
-    <th>11 Times Table</th>
-    <th>12 Times Table</th>
-    <th>13 Times Table</th>
-    <th>14 Times Table</th>
-    <th>15 Times Table</th>
-  </tr>
-  <!-- Use JavaScript to generate rows dynamically -->
-</table>
-<table>
-  <tr>
-    <th>16 Times Table</th>
-    <th>17 Times Table</th>
-    <th>18 Times Table</th>
-    <th>19 Times Table</th>
-    <th>20 Times Table</th>
-  </tr>
-  <!-- Use JavaScript to generate rows dynamically -->
-</table>
-<script>
-  function generateTable(start, end, table) {
-    for (var i = 1; i <= 20; i++) {
-      var row = table.insertRow(i);
-      for (var j = start; j <= end; j++) {
-        var cell = row.insertCell(j - start);
-        cell.innerHTML = j + ' * ' + i + ' = ' + (j * i);
+      <td>
+        <h3>4 Times Table</h3>
+        <table id="table4"></table>
+      </td>
+
+      <td>
+        <h3>5 Times Table</h3>
+        <table id="table5"></table>
+      </td>
+
+      <td>
+        <h3>6 Times Table</h3>
+        <table id="table6"></table>
+      </td>
+    </tr>
+    
+    <!-- Add more rows for tables 7 to 11 -->
+    <tr>
+      <td>
+        <h3>7 Times Table</h3>
+        <table id="table7"></table>
+      </td>
+
+      <td>
+        <h3>8 Times Table</h3>
+        <table id="table8"></table>
+      </td>
+
+      <td>
+        <h3>9 Times Table</h3>
+        <table id="table9"></table>
+      </td>
+
+      <td>
+        <h3>10 Times Table</h3>
+        <table id="table10"></table>
+      </td>
+
+      <td>
+        <h3>11 Times Table</h3>
+        <table id="table11"></table>
+      </td>
+    </tr>
+
+    <!-- Add another row for tables 12 to 16 -->
+    <tr>
+      <td>
+        <h3>12 Times Table</h3>
+        <table id="table12"></table>
+      </td>
+
+      <td>
+        <h3>13 Times Table</h3>
+        <table id="table13"></table>
+      </td>
+
+      <td>
+        <h3>14 Times Table</h3>
+        <table id="table14"></table>
+      </td>
+
+      <td>
+        <h3>15 Times Table</h3>
+        <table id="table15"></table>
+      </td>
+
+      <td>
+        <h3>16 Times Table</h3>
+        <table id="table16"></table>
+      </td>
+    </tr>
+
+    <!-- Add another row for tables 17 to 20 -->
+    <tr>
+      <td>
+        <h3>17 Times Table</h3>
+        <table id="table17"></table>
+      </td>
+
+      <td>
+        <h3>18 Times Table</h3>
+        <table id="table18"></table>
+      </td>
+
+      <td>
+        <h3>19 Times Table</h3>
+        <table id="table19"></table>
+      </td>
+
+      <td>
+        <h3>20 Times Table</h3>
+        <table id="table20"></table>
+      </td>
+    </tr>
+  </table>
+
+  <script>
+    function generateTable(tableId, multiplier) {
+      for (var i = 1; i <= 20; i++) {
+        document.getElementById(tableId).innerHTML += '<tr><td>' + multiplier + ' * ' + i + ' = ' + (multiplier * i) + '</td></tr>';
       }
     }
-  }
 
-  var table1 = document.querySelectorAll('table')[0];
-  generateTable(2, 5, table1);
-
-  var table2 = document.querySelectorAll('table')[1];
-  generateTable(6, 10, table2);
-
-  var table3 = document.querySelectorAll('table')[2];
-  generateTable(11, 15, table3);
-
-  var table4 = document.querySelectorAll('table')[3];
-  generateTable(16, 20, table4);
-
-</script>
+    // Generate tables for 2 to 20
+    generateTable('table2', 2);
+    generateTable('table3', 3);
+    generateTable('table4', 4);
+    generateTable('table5', 5);
+    generateTable('table6', 6);
+    generateTable('table7', 7);
+    generateTable('table8', 8);
+    generateTable('table9', 9);
+    generateTable('table10', 10);
+    generateTable('table11', 11);
+    generateTable('table12', 12);
+    generateTable('table13', 13);
+    generateTable('table14', 14);
+    generateTable('table15', 15);
+    generateTable('table16', 16);
+    generateTable('table17', 17);
+    generateTable('table18', 18);
+    generateTable('table19', 19);
+    generateTable('table20', 20);
+  </script>
 
 </body>
 </html>

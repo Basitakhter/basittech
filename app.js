@@ -1,36 +1,21 @@
-console.log 
-console.table(prompt)
- 
 alert("Happy To Welcome You")
  confirm("Do You Want To Continou?")
- var inp = prompt("Enter the Number")
-  console.log(inp)
- document.write(`${inp} x 1 = `, inp*1 + "<br>")
- document.write(`${inp} x 2 = `, inp*2 + "<br>")
- document.write(`${inp} x 3 = `, inp*3 + "<br>")
- document.write(`${inp} x 4 = `, inp*4 + "<br>")
- document.write(`${inp} x 5 = `, inp*5 + "<br>")
- document.write(`${inp} x 6 = `, inp*6 + "<br>")
- document.write(`${inp} x 7 = `, inp*7 + "<br>")
- document.write(`${inp} x 8 = `, inp*8 + "<br>")
- document.write(`${inp} x 9 = `, inp*9 + "<br>")
- document.write(`${inp} x 10 = `, inp*10 + "<br>")
+ var inp = prompt("Enter the Number");
+var endNumber = 20;
 
- console.log
+function generateMultiplicationTable(inp) {
+  for (let i = inp; i <= endNumber; i++) {
+    document.write(`<h3>Table of ${i} times:</h3>`);
+    for (let j = 1; j <= 10; j++) {
+      document.write(`${i} x ${j} = ${i * j}<br>`);
+    }
+    document.write("<br>"); // Add a newline for better readability
+  }
+}
 
- console.log(`${inp} x 1 = `, inp*1 + "<br>")
- console.log(`${inp} x 2 = `, inp*2 + "<br>")
- console.log(`${inp} x 3 = `, inp*3 + "<br>")
- console.log(`${inp} x 4 = `, inp*4 + "<br>")
- console.log(`${inp} x 5 = `, inp*5 + "<br>")
- console.log(`${inp} x 6 = `, inp*6 + "<br>")
- console.log(`${inp} x 7 = `, inp*7 + "<br>")
- console.log(`${inp} x 8 = `, inp*8 + "<br>")
- console.log(`${inp} x 9 = `, inp*9 + "<br>")
- console.log(`${inp} x 10 = `, inp*10 + "<br>")
-
-
-
+// Example usage:
+let inputNumber = parseInt(inp);
+generateMultiplicationTable(inputNumber);
 
 
 const ptr = prompt("Tell me Your Percentage")

@@ -1,191 +1,627 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pakistan Best Digital Marketing Agency</title>
+    <title>BasisSign UX/UI Improvement Report</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --success: #27ae60;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gray: #7f8c8d;
+        }
+        
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333;
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
-            padding: 15px;
+            padding: 30px 20px;
             text-align: center;
+            border-radius: 10px 10px 0 0;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
         }
-
-        nav {
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            opacity: 0.9;
+        }
+        
+        .header-badge {
+            background-color: var(--accent);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        .section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--secondary);
+        }
+        
+        .section-title {
             display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: var(--primary);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .section-title i {
+            font-size: 1.8rem;
+            margin-right: 15px;
+            color: var(--secondary);
+        }
+        
+        .section-title h2 {
+            font-size: 1.8rem;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary);
+            color: white;
+            text-align: left;
+            padding: 15px;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .comparison-table .bs-col {
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .comparison-table .competitor-col {
+            border-left: 4px solid #3498db;
+        }
+        
+        .comparison-table .improvement-col {
+            border-left: 4px solid #27ae60;
+        }
+        
+        .improvement-tag {
+            background-color: #27ae60;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin: 5px 5px 5px 0;
+        }
+        
+        .websites-compared {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .website-card {
+            flex: 1;
+            min-width: 180px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border-top: 4px solid var(--secondary);
+        }
+        
+        .website-card.current {
+            border-top-color: var(--accent);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.1);
+        }
+        
+        .website-card i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .website-card.current i {
+            color: var(--accent);
+        }
+        
+        .action-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .action-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid var(--secondary);
+            transition: transform 0.3s ease;
+        }
+        
+        .action-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .action-card i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .image-placeholder {
+            background-color: #f1f2f6;
+            border: 2px dashed #a4b0be;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            margin: 20px 0;
+            color: #747d8c;
+        }
+        
+        .image-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #a4b0be;
+        }
+        
+        .section-flow {
+            counter-reset: flow-counter;
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 20px;
+        }
+        
+        .section-flow li {
+            counter-increment: flow-counter;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+            position: relative;
+            padding-left: 70px;
+        }
+        
+        .section-flow li:before {
+            content: counter(flow-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--secondary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
             justify-content: center;
-            background-color: #555;
-            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
         }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            margin: 0 10px;
-        }
-
-        nav a:hover {
-            background-color: #777;
-        }
-
-        .logo {
+        
+        .expected-outcomes {
             display: flex;
-            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
         }
-
-        .logo img {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
+        
+        .outcome-card {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--success);
         }
-
-        .search-bar {
-            display: flex;
-            align-items: center;
+        
+        .outcome-card i {
+            font-size: 2.5rem;
+            color: var(--success);
+            margin-bottom: 15px;
         }
-
-        .search-bar input {
-            padding: 8px;
-            font-size: 16px;
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: var(--gray);
+            border-top: 1px solid #eee;
         }
-
-        .search-bar button {
-            padding: 8px 15px;
-            font-size: 16px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .search-bar button:hover {
-            background-color: #45a049;
+        
+        @media (max-width: 768px) {
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .action-items {
+                grid-template-columns: 1fr;
+            }
+            
+            .website-card {
+                min-width: 100%;
+            }
         }
     </style>
 </head>
-
 <body>
-
-    <header>
-        <div class="logo">
-            <img src="BT-A.L.D-93f4e76a.png" alt="Logo">
-            <h2>Basit-Tech</h2>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-chart-line"></i> UX/UI Suggestion Report for BasisSign</h1>
+            <p>Comparative analysis with U.S. wholesale sign manufacturers to highlight gaps and provide clear improvement directions for the development team.</p>
+            <div class="header-badge">Target: Better UX/UI for B2B Leads</div>
         </div>
-
-        <div class="search-bar">
-            <input type="text" placeholder="Search...">
-            <button type="submit">Search</button>
-        </div>
-    </header>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <div id="slider">
-        <div class="slide">
-            <img src="digital-slider.jpeg" alt="Slider Image 1">
-            <div class="text">
-                <h2>Your Agency Slogan 1</h2>
-                <p>Unlock the power of digital marketing for your business.</p>
-                <a href="#" class="cta-button">Get Started</a>
+        
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-globe-americas"></i>
+                <h2>Websites Compared</h2>
+            </div>
+            <div class="websites-compared">
+                <div class="website-card current">
+                    <i class="fas fa-industry"></i>
+                    <h3>BasisSign.com</h3>
+                    <p>Current Website</p>
+                </div>
+                <div class="website-card">
+                    <i class="fas fa-building"></i>
+                    <h3>Sign Builders Inc.</h3>
+                    <p>USA Competitor</p>
+                </div>
+                <div class="website-card">
+                    <i class="fas fa-warehouse"></i>
+                    <h3>Sign Wholesale USA</h3>
+                    <p>USA Competitor</p>
+                </div>
+                <div class="website-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Sign Partners USA</h3>
+                    <p>USA Competitor</p>
+                </div>
+                <div class="website-card">
+                    <i class="fas fa-store"></i>
+                    <h3>Signarama</h3>
+                    <p>USA Competitor</p>
+                </div>
             </div>
         </div>
-
-        <div class="slide">
-            <img src="digital-slider.jpeg" alt="Slider Image 2">
-            <div class="text">
-                <h2>Your Agency Slogan 2</h2>
-                <p>Boost your online presence with our expert marketing solutions.</p>
-                <a href="#" class="cta-button">Learn More</a>
+        
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-columns"></i>
+                <h2>UX/UI Comparison Summary</h2>
             </div>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>UX/UI Area</th>
+                        <th class="bs-col">BasisSign.com</th>
+                        <th class="competitor-col">Top USA Competitors</th>
+                        <th class="improvement-col">Improvement Recommendation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Homepage Clarity</strong></td>
+                        <td class="bs-col">Value proposition not immediately clear. Wholesale focus not strong above the fold.</td>
+                        <td class="competitor-col">Clear headline explaining wholesale offering, audience, and benefits within first screen.</td>
+                        <td class="improvement-col">
+                            <span class="improvement-tag">Add Hero Headline</span>
+                            <span class="improvement-tag">Include CTA</span>
+                            <br>
+                            Add strong hero headline: 'Wholesale Custom Signs for US Sign Companies -- Factory Direct'
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Navigation Structure</strong></td>
+                        <td class="bs-col">Navigation is basic; product categories are not clearly segmented.</td>
+                        <td class="competitor-col">Well-structured menus with product types, industries, and resources.</td>
+                        <td class="improvement-col">
+                            <span class="improvement-tag">Rebuild Navigation</span>
+                            <br>
+                            Clear categories: Channel Letters, LED Signs, Custom Signs, Wholesale Program
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Trust & Credibility</strong></td>
+                        <td class="bs-col">Limited trust signals (certifications, reviews, US compliance).</td>
+                        <td class="competitor-col">Strong trust signals: UL listing, years in business, partner logos.</td>
+                        <td class="improvement-col">
+                            <span class="improvement-tag">Add UL Badges</span>
+                            <span class="improvement-tag">Client Logos</span>
+                            <br>
+                            Add UL certification badges, client logos, guarantees, and compliance statements
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lead Conversion</strong></td>
+                        <td class="bs-col">Inquiry flow is not optimized; CTAs are not strong or repeated.</td>
+                        <td class="competitor-col">Multiple CTAs: Get Quote, Upload Artwork, Dealer Signup.</td>
+                        <td class="improvement-col">
+                            <span class="improvement-tag">Add Sticky CTAs</span>
+                            <span class="improvement-tag">Short Forms</span>
+                            <br>
+                            Add sticky CTAs, short quote forms, and dealer registration funnel
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Visual Design</strong></td>
+                        <td class="bs-col">Design looks functional but outdated; lacks premium feel.</td>
+                        <td class="competitor-col">Modern, clean, industrial design with consistent spacing and fonts.</td>
+                        <td class="improvement-col">
+                            <span class="improvement-tag">Upgrade Typography</span>
+                            <span class="improvement-tag">Modern UI</span>
+                            <br>
+                            Upgrade typography, spacing, color contrast. Use modern UI components
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mobile Experience</strong></td>
+                        <td class="bs-col">Mobile layout needs optimization; content feels compressed.</td>
+                        <td class="competitor-col">Mobile-first layouts with clear CTAs and readable text.</td>
+                        <td class="improvement-col">
+                            <span class="improvement-tag">Redesign Mobile UI</span>
+                            <br>
+                            Redesign mobile UI with larger buttons, simplified sections, and faster load
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Speed & Performance</strong></td>
+                        <td class="bs-col">Pages may feel heavy and slower to load.</td>
+                        <td class="competitor-col">Optimized images, fast-loading layouts.</td>
+                        <td class="improvement-col">
+                            <span class="improvement-tag">Optimize Images</span>
+                            <span class="improvement-tag">Enable Caching</span>
+                            <br>
+                            Optimize images, enable caching, reduce scripts, improve Core Web Vitals
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Content UX</strong></td>
+                        <td class="bs-col">Content focuses more on products than buyer pain points.</td>
+                        <td class="competitor-col">Competitors explain benefits, process, and reseller advantages.</td>
+                        <td class="improvement-col">
+                            <span class="improvement-tag">Rewrite Content</span>
+                            <br>
+                            Rewrite content to address sign shops, agencies, and resellers directly
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-images"></i>
+                <h2>Homepage Redesign Concepts</h2>
+            </div>
+            
+            <h3>Header Recommendation:</h3>
+            <p>I recommend making it like Fastsigns for better navigation structure and visual appeal.</p>
+            <div class="image-placeholder">
+                <i class="fas fa-image"></i>
+                <p><strong>Header Reference Image</strong></p>
+                <img src="fastsign.png" width="800px" alt="">
+                </br></br>
+                <img src="lc.png" width="800px" alt="">
+                </br></br>
+                <img src="basis.png" width="800px" alt="">
+            </br></br>
+                <p><b>Clean, structured navigation with clear product categories and CTAs</b></p>
+            </div>
+            
+            <h3>Fold Area Concept:</h3>
+            <div class="image-placeholder">
+                <i class="fas fa-image"></i>
+                <p><strong>Hero Section Concept</strong></p>
+                <img src="fold.png" width="800px" alt="">
+                <p><b>Strong value proposition with clear wholesale positioning and primary CTA</b></p>
+            </div>
+            
+            <div class="image-placeholder">
+                <i class="fas fa-image"></i>
+                <p><strong>Design Concept Reference</strong></p>
+                <img src="process.png" width="800px" alt="">
+                <p><b>Modern, clean layout with our branding applied</b></p>
+            </div>
+            
+            <h3>Missing Sections to Add:</h3>
+            
+            <div class="image-placeholder">
+                <i class="fas fa-image"></i>
+                <p><strong>Manufacturing Company Portfolio</strong> </p>
+                <img src="portfolio.png" width="800px">
+                <p>Showcase of our manufacturing capabilities and past projects</b></p>
+            </div>
+            
+            <div class="image-placeholder">
+                <i class="fas fa-image"></i>
+                <p><strong>Custom Delivery Box Branding</strong> </p>
+                <img src="delivery.png" width="800px">
+                <p>Partners can have their logo on delivery box for branding</b></p>
+            </div>
+            
+            <div class="image-placeholder">
+                <i class="fas fa-image"></i>
+                <p><strong>Product Showcase</strong></p>
+                <img src="products sec.png" width="800px">
+                <p>Display products effectively with single product template pages like Signarama</p>
+            </div>
+        </div>
+        <h3>Why Choose Us</h3>
+            
+            <div class="image-placeholder">
+                <i class="fas fa-image"></i>
+                <p><strong>Why Choose Us</strong> </p>
+                <img src="why.png" width="800px">
+                <p>Why chose us with CTR and explainer video</b></p>
+            </div>
+            <h3>FAQs</h3>
+            
+            <div class="image-placeholder">
+                <i class="fas fa-image"></i>
+                <p><strong>FAQs</strong> </p>
+                <img src="faqs.png" width="800px">
+                <p>faqs for more details and q/a for customer inquiry</b></p>
+            </div>
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-sitemap"></i>
+                <h2>Recommended Page Section Flow</h2>
+            </div>
+            
+            <p>The following flow organizes sections for optimal user journey and conversion:</p>
+            
+            <ol class="section-flow">
+                <li><strong>Hero Section</strong> - Clear value proposition with prominent CTA buttons</li>
+                <li><strong>About Us Section</strong> - Company story and wholesale positioning</li>
+                <li><strong>Products Showcase</strong> - Featured products with CTAs to explore categories</li>
+                <li><strong>Process Section</strong> - How we work, from quote to delivery</li>
+                <li><strong>Custom Delivery Box</strong> - Free consultancy or contact us CTA</li>
+                <li><strong>Partners & Portfolio</strong> - Combined section showing client logos and project examples</li>
+                <li><strong>Why Choose Us</strong> - Competitive advantages with conversion-focused CTAs</li>
+                <li><strong>Testimonials/Reviews</strong> - Social proof from satisfied B2B clients</li>
+                <li><strong>FAQs Section</strong> - Answers to common wholesale sign questions</li>
+                <li><strong>Footer</strong> - Comprehensive navigation and contact information</li>
+            </ol>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-tasks"></i>
+                <h2>Key UX/UI Action Items for Developers</h2>
+            </div>
+            
+            <div class="action-items">
+                <div class="action-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Redesign Hero Section</h3>
+                    <p>Homepage hero with clear wholesale positioning and strong value proposition above the fold.</p>
+                </div>
+                
+                <div class="action-card">
+                    <i class="fas fa-bars"></i>
+                    <h3>Improve Navigation</h3>
+                    <p>Better hierarchy and product discoverability with clear segmentation of categories.</p>
+                </div>
+                
+                <div class="action-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Add Trust Indicators</h3>
+                    <p>UL certification badges, warranty information, US standards compliance statements.</p>
+                </div>
+                
+                <div class="action-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Optimize Mobile Experience</h3>
+                    <p>Mobile-responsive design with larger touch targets and faster loading times.</p>
+                </div>
+                
+                <div class="action-card">
+                    <i class="fas fa-mouse-pointer"></i>
+                    <h3>Implement Conversion CTAs</h3>
+                    <p>Sticky CTAs, short quote forms, and streamlined dealer registration funnel.</p>
+                </div>
+                
+                <div class="action-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Improve Performance</h3>
+                    <p>Optimize images, enable caching, reduce scripts, improve Core Web Vitals.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-chart-bar"></i>
+                <h2>Expected Outcome After Improvements</h2>
+            </div>
+            
+            <div class="expected-outcomes">
+                <div class="outcome-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Higher Trust from US B2B Buyers</h3>
+                    <p>Professional appearance and trust signals will increase credibility with American wholesale clients.</p>
+                </div>
+                
+                <div class="outcome-card">
+                    <i class="fas fa-signal"></i>
+                    <h3>Better Lead Conversion Rate</h3>
+                    <p>Optimized CTAs and forms will convert more visitors into qualified leads.</p>
+                </div>
+                
+                <div class="outcome-card">
+                    <i class="fas fa-industry"></i>
+                    <h3>Stronger Wholesale Positioning</h3>
+                    <p>Clear messaging will establish BasisSign as a professional wholesale manufacturer.</p>
+                </div>
+                
+                <div class="outcome-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Improved User Engagement</h3>
+                    <p>Better UX will increase time on site and inquiry volume from target customers.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>BasisSign UX/UI Improvement Report</strong> | Created based on competitive analysis with US wholesale sign manufacturers</p>
+            <p>Report Date: 13-Jan-2026 | Target Implementation: Development Team</p>
         </div>
     </div>
-
-    <script>
-        let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            let i;
-            const slides = document.getElementsByClassName("slide");
-
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-
-            slideIndex++;
-
-            if (slideIndex > slides.length) {
-                slideIndex = 1;
-            }
-
-            slides[slideIndex - 1].style.display = "block";
-
-            setTimeout(showSlides, 4000); // Change slide every 4 seconds
-        }
-    </script>
-    <section>
-        <div>
-            <h2>About Us</h2>
-            <p>Welcome to Basit Tech, your trusted digital marketing agency. We specialize in helping businesses grow their online presence through effective digital strategies. Our team of experts is dedicated to delivering results that matter.</p>
-        </div>
-        <div>
-            <img src="about_us_image.JPG" alt="About Us Image">
-        </div>
-    </section>
-
-    <section>
-        <h2>Our Services</h2>
-        <p>We offer a range of digital marketing services, including:</p>
-        <ul>
-            <li><strong>Search Engine Optimization (SEO)</strong> - Improve your website's visibility on search engines to attract more organic traffic.</li>
-            <li><strong>Social Media Marketing</strong> - Engage with your audience and build brand awareness through strategic social media campaigns.</li>
-            <li><strong>Content Marketing</strong> - Create compelling content that resonates with your target audience and drives valuable actions.</li>
-            <li><strong>Pay-Per-Click (PPC) Advertising</strong> - Maximize your online visibility and reach your target audience through targeted paid advertising.</li>
-            <!-- Add more services as needed -->
-        </ul>
-        <img src="services.JPG" alt="Services Image">
-    </section>
-
-    <section>
-        <h2>How We Work</h2>
-        <p>Our approach is tailored to your business needs. We start by understanding your goals and target audience, then develop a customized strategy to achieve optimal results. Whether you're a startup or an established business, we have the expertise to elevate your online presence.</p>
-        <img src="how_we_work_image.jpg" alt="How We Work Image">
-    </section>
-
-    <section>
-        <h2>Contact Us</h2>
-        <p>Ready to take your business to the next level? Contact us today for a personalized digital marketing strategy.</p>
-        <p>Email: info@basittech.com</p>
-        <p>Phone: +1 (555) 123-4567</p>
-        <form action="form.html"></form>
-    </section>
-</br></br>
-</br>
-</br>
-
-
-    <footer>
-        <p>&copy; 2023 Basit Tech. All rights reserved.</p>
-    </footer>
-
 </body>
-
 </html>
